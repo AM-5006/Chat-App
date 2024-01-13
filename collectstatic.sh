@@ -10,7 +10,7 @@ source env/bin/activate
 cd /var/lib/jenkins/workspace/Chat_App_Pipeline
 
 # Collectstatic files
-sudo python3 manage.py collectstatic --noinput
+python3 manage.py collectstatic --noinput
 
 #deactivate virtual environment
 deactivate
