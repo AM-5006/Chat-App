@@ -11,10 +11,8 @@ pipeline {
         stage('Install requirements') {
             steps {
                 script {
-                    sh '''
-                        chmod +x env_setup.sh
-                        ./env_setup.sh
-                    '''
+                    sh 'chmod +x env_setup.sh'
+                    sh './env_setup.sh'
                 }
             }
         }
