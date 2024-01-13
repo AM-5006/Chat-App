@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Move to /home/ubuntu/
-cd /home/ubuntu/
-
 if [ -d "env" ]; then
     echo "Python virtual environment exists."
 else
@@ -13,7 +10,7 @@ fi
 source env/bin/activate
 
 # Install requirements
-pip3 install -r /var/lib/jenkins/workspace/Chat_App_Pipeline/requirements.txt
+pip3 install -r requirements.txt
 
 #deactivate virtual environment
 deactivate
