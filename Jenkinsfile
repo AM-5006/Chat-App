@@ -29,8 +29,25 @@ pipeline {
             steps {
                 script {
                     sh 'git pull origin master'
+                    sh 'chmod +x collectstatic.sh'
+                    sh './collectstatic.sh'
                 }
             }
         }
+
+        stage('Start Services') {
+            steps {
+                script {
+                    // Start Gunicorn
+                    sh 'sudo supervisorctl reread'
+                    sh 'sudo supervisorctl update'
+                    sh 'sudo supervisorctl start all'
+
+                    // Start Nginx
+                    sh 'sudo service nginx restart'
+                }
+            }
+        }
+
     }
 }

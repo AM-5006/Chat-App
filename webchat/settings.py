@@ -31,7 +31,7 @@ DEBUG = config("DEBUG")
 if DEBUG:
     ALLOWED_HOSTS = ['']
 else:
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['*', '13.53.187.125']
 
 # Application definition
 
