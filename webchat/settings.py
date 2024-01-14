@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-from decouple import config
+from os import getenv as config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,9 +29,9 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG")
 
 if DEBUG is True:
-    ALLOWED_HOSTS = ['']
+    ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ['*', '16.171.200.69']
+    ALLOWED_HOSTS = [config('ALLOWED_HOST')]
 
 # Application definition
 
