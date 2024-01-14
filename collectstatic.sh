@@ -4,7 +4,7 @@
 source env/bin/activate
 
 # Collectstatic files
-python3 manage.py collectstatic --noinput
+doppler run python3 manage.py collectstatic --noinput
 
 #deactivate virtual environment
 deactivate
