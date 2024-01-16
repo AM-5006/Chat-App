@@ -17,6 +17,15 @@ pipeline {
             }
         }
 
+        stage('Import env variables') {
+            steps {
+                script {
+                    sh 'chmod +x env_var.sh'
+                    sh './env_var.sh'
+                }
+            }
+        }
+
         stage('Stop Services') {
             steps {
                 script {
